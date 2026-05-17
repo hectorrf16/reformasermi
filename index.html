@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<!--
+╔══════════════════════════════════════════════════════════════════╗
+║  REFORMES INTEGRALS ERMI · Web estática · index.html            ║
+║  Última edición: 2026                                            ║
+╠══════════════════════════════════════════════════════════════════╣
+║  ESTRUCTURA DE CARPETAS (en el hosting):                         ║
+║                                                                  ║
+║  /                                                               ║
+║  ├── index.html          ← este archivo                          ║
+║  └── fotos/              ← carpeta de imágenes                   ║
+║      ├── trabajos/       ← fotos del carrusel de trabajos        ║
+║      │   ├── bano-01.jpg                                         ║
+║      │   ├── cocina-01.jpg                                       ║
+║      │   └── ...                                                 ║
+║      └── servicios/      ← (opcional) iconos o fotos adicionales ║
+║                                                                  ║
+║  NOMBRADO DE FOTOS RECOMENDADO (ayuda al SEO):                   ║
+║  reforma-bano-barcelona-01.jpg                                   ║
+║  instalacion-electrica-sant-andreu.jpg                           ║
+║  cocina-reformada-barcelona.jpg                                  ║
+╚══════════════════════════════════════════════════════════════════╝
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SEO BÁSICO
+       Cambia la descripción si quieres afinar el mensaje.
+       El title y description son lo que aparece en Google.
+       ═══════════════════════════════════════════════════════════ -->
+  <title>Reformes Integrals ERMI · Reformas en Barcelona | Luz, Agua, Gas</title>
+  <meta name="description" content="Empresa de reformas integrales en Barcelona. Especialistas en instalaciones de luz, agua y gas. Reformas de baños, cocinas y pisos en Sant Andreu y toda Barcelona. Pide presupuesto sin compromiso." />
+  <meta name="keywords" content="reformas barcelona, reformas integrales barcelona, fontanero barcelona, electricista barcelona, reforma baño barcelona, reforma cocina barcelona, instalador gas barcelona, sant andreu reformas" />
+  <meta name="author" content="Reformes Integrals ERMI" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://reformasermi.com/" />
+
+  <!-- Open Graph (para compartir en redes y WhatsApp) -->
+  <meta property="og:type" content="business.business" />
+  <meta property="og:title" content="Reformes Integrals ERMI · Barcelona" />
+  <meta property="og:description" content="Especialistas en reformas integrales, instalaciones de luz, agua y gas en Barcelona. Más de 10 años de experiencia." />
+  <meta property="og:url" content="https://reformasermi.com/" />
+  <!-- og:image → cuando tengas una foto de portada, descomenta y cambia la ruta:
+  <meta property="og:image" content="https://reformasermi.com/fotos/portada-ermi.jpg" />
+  -->
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SCHEMA MARKUP — NEGOCIO LOCAL (muy importante para Google)
+       No es visible para el usuario pero Google lo lee.
+       Actualiza los datos si cambian dirección, teléfono, etc.
+       ═══════════════════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Reformes Integrals ERMI",
+    "url": "https://reformasermi.com",
+    "telephone": "+34933499362",
+    "email": "er.mi2010@hotmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Carrer del Cardenal Tedeschini, 19",
+      "addressLocality": "Barcelona",
+      "postalCode": "08027",
+      "addressCountry": "ES"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 41.4284,
+      "longitude": 2.1874
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "09:00",
+        "closes": "14:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "16:00",
+        "closes": "19:00"
+      }
+    ],
+    "priceRange": "€€",
+    "areaServed": "Barcelona",
+    "description": "Empresa de reformas integrales en Barcelona. Especialistas en instalaciones de luz, agua y gas."
+  }
+  </script>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ══════════════════════════════════════════════════
+       VARIABLES DE COLOR Y TIPOGRAFÍA
+       Para cambiar colores corporativos, edita aquí.
+       ══════════════════════════════════════════════════ */
+    :root {
+      --stone:      #f2ede6;
+      --sand:       #e4d9c8;
+      --cement:     #9a8e82;
+      --terracota:  #c4552a;
+      --brick:      #8b3a1e;
+      --charcoal:   #1e1c1a;
+      --ink:        #2e2b27;
+      --white:      #faf8f5;
+      --radius:     4px;
+      --gap:        clamp(16px, 4vw, 40px);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--stone);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--sand); }
+    ::-webkit-scrollbar-thumb { background: var(--terracota); border-radius: 3px; }
+
+    /* ── Contenedor centrado ── */
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 var(--gap);
+    }
+
+    /* ── Etiqueta de sección ── */
+    .tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--terracota);
+      border: 1px solid var(--terracota);
+      padding: 4px 10px;
+      border-radius: 2px;
+      margin-bottom: 14px;
+    }
+
+    /* ── Títulos de sección ── */
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(40px, 7vw, 78px);
+      line-height: 0.95;
+      letter-spacing: 0.01em;
+      color: var(--charcoal);
+    }
+    .section-title em { font-style: normal; color: var(--terracota); }
+
+    /* ── Botones ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 26px;
+      border-radius: var(--radius);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .btn-primary { background: var(--terracota); color: var(--white); }
+    .btn-primary:hover { background: var(--brick); transform: translateY(-2px); }
+    .btn-ghost { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.35); }
+    .btn-ghost:hover { border-color: var(--white); transform: translateY(-2px); }
+
+    /* ── Animación de entrada al hacer scroll ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s, transform 0.65s;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ════════════════════════════════════════════════
+       NAVEGACIÓN
+       ════════════════════════════════════════════════ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      background: rgba(30,28,26,0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(196,85,42,0.25);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 62px;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 var(--gap);
+    }
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 25px;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+    }
+    .nav-logo span { color: var(--terracota); }
+    .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+    .nav-links a {
+      color: var(--cement);
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      background: var(--terracota) !important;
+      color: var(--white) !important;
+      padding: 8px 18px;
+      border-radius: var(--radius);
+    }
+    .nav-cta:hover { background: var(--brick) !important; }
+    .nav-burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 6px;
+    }
+    .nav-burger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--cement); border-radius: 1px; transition: all 0.3s;
+    }
+
+    /* ════════════════════════════════════════════════
+       HERO
+       ════════════════════════════════════════════════ */
+    #hero {
+      min-height: 100svh;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: clamp(56px, 9vw, 110px);
+      position: relative;
+      background: var(--charcoal);
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(135deg, rgba(196,85,42,0.12) 0%, transparent 55%),
+        linear-gradient(to bottom, transparent 35%, rgba(20,18,16,0.92) 100%);
+      z-index: 1;
+    }
+    .hero-grid {
+      position: absolute; inset: 0; z-index: 1; opacity: 0.03;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-deco {
+      position: absolute;
+      bottom: -30px; right: -10px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(140px, 22vw, 300px);
+      color: rgba(196,85,42,0.05);
+      line-height: 1;
+      pointer-events: none;
+      z-index: 1;
+      user-select: none;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 1160px; width: 100%;
+      margin: 0 auto;
+      padding: 0 var(--gap);
+    }
+    .hero-pretitle {
+      font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--terracota); margin-bottom: 18px;
+      opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
+    }
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(52px, 10vw, 128px);
+      line-height: 0.9; color: var(--white);
+      letter-spacing: 0.01em; margin-bottom: 24px;
+      opacity: 0; animation: fadeUp 0.9s 0.35s forwards;
+    }
+    .hero-title em { font-style: normal; color: var(--terracota); display: block; }
+    .hero-sub {
+      font-size: clamp(15px, 1.8vw, 18px); color: var(--cement);
+      max-width: 480px; line-height: 1.65; margin-bottom: 36px;
+      font-weight: 300;
+      opacity: 0; animation: fadeUp 1s 0.5s forwards;
+    }
+    .hero-actions {
+      display: flex; gap: 14px; flex-wrap: wrap;
+      opacity: 0; animation: fadeUp 1s 0.65s forwards;
+    }
+    /* Badges instalador autorizado */
+    .hero-badges {
+      position: absolute;
+      top: 80px; right: var(--gap); z-index: 2;
+      display: flex; flex-direction: column; gap: 8px;
+      opacity: 0; animation: fadeLeft 0.8s 0.9s forwards;
+    }
+    .badge {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.09);
+      backdrop-filter: blur(6px);
+      padding: 10px 16px; border-radius: var(--radius);
+      font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--cement); text-align: center;
+    }
+    .badge strong {
+      display: block; color: var(--terracota);
+      font-size: 14px; font-family: 'Bebas Neue', sans-serif; font-weight: 400;
+      letter-spacing: 0.05em;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeLeft {
+      from { opacity: 0; transform: translateX(24px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    /* ════════════════════════════════════════════════
+       SERVICIOS
+       ════════════════════════════════════════════════ */
+    #servicios {
+      padding: clamp(80px, 12vw, 140px) 0;
+      background: var(--white);
+    }
+    .section-header {
+      display: flex; align-items: flex-end;
+      justify-content: space-between; gap: 24px;
+      margin-bottom: clamp(40px, 6vw, 70px); flex-wrap: wrap;
+    }
+    .section-desc {
+      max-width: 320px; font-size: 15px; line-height: 1.7;
+      color: var(--cement); font-weight: 300;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 3px;
+    }
+    .service-card {
+      background: var(--stone);
+      padding: clamp(26px, 4vw, 44px);
+      border-radius: var(--radius);
+      position: relative; overflow: hidden;
+      transition: all 0.3s;
+    }
+    .service-card::before {
+      content: ''; position: absolute;
+      left: 0; top: 0; bottom: 0; width: 3px;
+      background: var(--terracota);
+      transform: scaleY(0); transform-origin: bottom;
+      transition: transform 0.3s;
+    }
+    .service-card:hover { background: var(--sand); transform: translateX(4px); }
+    .service-card:hover::before { transform: scaleY(1); }
+    .service-icon { font-size: 30px; margin-bottom: 18px; display: block; }
+    .service-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 24px; letter-spacing: 0.03em;
+      color: var(--charcoal); margin-bottom: 8px;
+    }
+    .service-desc { font-size: 14px; line-height: 1.65; color: var(--cement); font-weight: 300; }
+
+    /* ════════════════════════════════════════════════
+       CARRUSEL DE TRABAJOS
+       ════════════════════════════════════════════════ */
+    #trabajos {
+      padding: clamp(80px, 12vw, 140px) 0;
+      background: var(--charcoal);
+      overflow: hidden;
+    }
+    #trabajos .section-title { color: var(--white); }
+    #trabajos .section-desc  { color: var(--cement); }
+
+    .carousel-wrapper {
+      position: relative;
+      margin-top: clamp(36px, 5vw, 60px);
+    }
+
+    /* Área de desplazamiento */
+    .carousel-track-outer {
+      overflow: hidden;
+      border-radius: 6px;
+    }
+    .carousel-track {
+      display: flex;
+      gap: 16px;
+      transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      will-change: transform;
+    }
+
+    /* ── SLIDE ─────────────────────────────────────────────────────
+       Para añadir una foto:
+         1. Copia todo el bloque <div class="slide">...</div>
+         2. Cambia el src de <img> por la ruta de tu foto
+         3. Cambia el texto de <p class="slide-caption">
+         4. Guarda y sube el archivo
+
+       RUTAS DE IMAGEN — dos opciones (deja una comentada):
+         · Hosting propio:  src="fotos/trabajos/tu-foto.jpg"
+         · URL externa:     src="https://ejemplo.com/tu-foto.jpg"
+    ── ──────────────────────────────────────────────────────────── -->
+    .slide {
+      flex: 0 0 calc(33.333% - 11px);
+      min-width: 280px;
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: rgba(255,255,255,0.04);
+      aspect-ratio: 4/3;
+    }
+    .slide img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s;
+    }
+    .slide:hover img { transform: scale(1.04); }
+    .slide-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(20,18,16,0.85) 0%, transparent 100%);
+      padding: 32px 16px 14px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em;
+    }
+
+    /* Placeholder cuando no hay fotos todavía */
+    .slide-placeholder {
+      flex: 0 0 calc(33.333% - 11px);
+      min-width: 280px;
+      aspect-ratio: 4/3;
+      border-radius: var(--radius);
+      border: 1px dashed rgba(196,85,42,0.3);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 10px; color: rgba(255,255,255,0.2);
+      font-size: 13px;
+    }
+    .slide-placeholder span { font-size: 32px; }
+
+    /* Controles del carrusel */
+    .carousel-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .carousel-btn {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--white);
+      font-size: 18px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .carousel-btn:hover {
+      background: var(--terracota);
+      border-color: var(--terracota);
+    }
+    .carousel-btn:disabled { opacity: 0.25; cursor: default; }
+    .carousel-dots {
+      display: flex; gap: 6px;
+    }
+    .carousel-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      border: none; cursor: pointer;
+      transition: all 0.2s; padding: 0;
+    }
+    .carousel-dot.active {
+      background: var(--terracota);
+      width: 20px; border-radius: 3px;
+    }
+
+    /* ════════════════════════════════════════════════
+       FORMULARIO DE CONTACTO
+       ════════════════════════════════════════════════ */
+    #contacto {
+      padding: clamp(80px, 12vw, 140px) 0;
+      background: var(--stone);
+    }
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      gap: clamp(40px, 6vw, 80px);
+      align-items: start;
+    }
+    .contact-info {
+      position: sticky;
+      top: 90px;
+    }
+    .contact-divider {
+      width: 44px; height: 2px;
+      background: var(--terracota);
+      margin: 28px 0;
+    }
+    .info-block { margin-bottom: 24px; }
+    .info-label {
+      font-size: 10px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--terracota);
+      margin-bottom: 5px; font-weight: 500;
+    }
+    .info-value { font-size: 15px; color: var(--charcoal); line-height: 1.55; }
+    .info-value a { color: inherit; text-decoration: none; transition: color 0.2s; }
+    .info-value a:hover { color: var(--terracota); }
+    .horario-grid {
+      display: grid; grid-template-columns: auto 1fr;
+      gap: 6px 18px; font-size: 14px;
+    }
+    .horario-grid dt { color: var(--cement); font-weight: 300; }
+    .horario-grid dd { color: var(--charcoal); }
+
+    /* Formulario */
+    .contact-form {
+      background: var(--white);
+      border-radius: 8px;
+      padding: clamp(30px, 5vw, 52px);
+      border-top: 3px solid var(--terracota);
+      box-shadow: 0 4px 40px rgba(30,28,26,0.07);
+    }
+    .form-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px; color: var(--charcoal);
+      letter-spacing: 0.04em; margin-bottom: 26px;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-group { display: flex; flex-direction: column; gap: 5px; margin-bottom: 16px; }
+    .form-group.full { grid-column: 1/-1; }
+    label {
+      font-size: 10px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--cement); font-weight: 500;
+    }
+    input, select, textarea {
+      width: 100%; padding: 11px 15px;
+      background: var(--stone); border: 1px solid var(--sand);
+      border-radius: var(--radius);
+      font-family: 'DM Sans', sans-serif; font-size: 14px;
+      color: var(--charcoal); outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      appearance: none;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--terracota); background: var(--white);
+    }
+    textarea { resize: vertical; min-height: 110px; }
+    .form-check {
+      display: flex; gap: 10px; align-items: flex-start;
+      margin-bottom: 22px; font-size: 13px; color: var(--cement); line-height: 1.5;
+    }
+    .form-check input[type="checkbox"] {
+      width: 15px; height: 15px; flex-shrink: 0;
+      margin-top: 2px; accent-color: var(--terracota);
+    }
+    .form-check a { color: var(--terracota); }
+    .btn-submit {
+      width: 100%; background: var(--terracota); color: var(--white);
+      padding: 15px; font-family: 'Bebas Neue', sans-serif;
+      font-size: 20px; letter-spacing: 0.1em;
+      border: none; border-radius: var(--radius);
+      cursor: pointer; transition: all 0.2s;
+    }
+    .btn-submit:hover { background: var(--brick); }
+    /* Estado de éxito */
+    .form-success { display: none; text-align: center; padding: 40px 20px; }
+    .form-success-icon { font-size: 48px; margin-bottom: 14px; }
+    .form-success h3 {
+      font-family: 'Bebas Neue', sans-serif; font-size: 28px;
+      color: var(--charcoal); letter-spacing: 0.05em; margin-bottom: 8px;
+    }
+    .form-success p { font-size: 15px; color: var(--cement); }
+
+    /* ════════════════════════════════════════════════
+       MAPA
+       ════════════════════════════════════════════════ */
+    #mapa { height: 340px; }
+    #mapa iframe {
+      width: 100%; height: 100%; border: none;
+      filter: grayscale(15%) contrast(1.05);
+      display: block;
+    }
+
+    /* ════════════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════════════ */
+    footer {
+      background: var(--charcoal);
+      padding: 48px 0 28px;
+      border-top: 1px solid rgba(196,85,42,0.18);
+    }
+    .footer-inner {
+      display: flex; align-items: flex-start;
+      justify-content: space-between; flex-wrap: wrap; gap: 28px;
+    }
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 26px; color: var(--white); letter-spacing: 0.06em;
+    }
+    .footer-logo span { color: var(--terracota); }
+    .footer-tagline { font-size: 13px; color: var(--cement); margin-top: 6px; }
+    .footer-links { display: flex; gap: 22px; list-style: none; flex-wrap: wrap; }
+    .footer-links a {
+      color: var(--cement); text-decoration: none;
+      font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--terracota); }
+    .footer-copy {
+      margin-top: 32px; padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      text-align: center; font-size: 12px;
+      color: rgba(184,168,152,0.4);
+    }
+
+    /* ════════════════════════════════════════════════
+       RESPONSIVE
+       ════════════════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .slide { flex: 0 0 calc(50% - 8px); }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-burger { display: flex; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: fixed; top: 62px; left: 0; right: 0;
+        background: rgba(28,26,24,0.98);
+        padding: 22px var(--gap) 30px; gap: 18px;
+        border-bottom: 1px solid rgba(196,85,42,0.15);
+      }
+      .hero-badges { display: none; }
+      .contact-layout { grid-template-columns: 1fr; }
+      .contact-info { position: static; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; }
+      .slide { flex: 0 0 calc(100% - 0px); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════
+     NAVEGACIÓN
+     ══════════════════════════════════════════════════ -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">ERMI<span>·</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#trabajos">Trabajos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#contacto" class="nav-cta">Presupuesto</a></li>
+    </ul>
+    <button class="nav-burger" id="burger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════
+     HERO
+     ══════════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-deco" aria-hidden="true">ERMI</div>
+
+  <div class="hero-badges">
+    <div class="badge"><strong>⚡ Luz</strong>Instalador autorizado</div>
+    <div class="badge"><strong>💧 Agua</strong>Instalador autorizado</div>
+    <div class="badge"><strong>🔥 Gas</strong>Instalador autorizado</div>
+  </div>
+
+  <div class="hero-content">
+    <p class="hero-pretitle">Barcelona · Reformes Integrals · Sant Andreu</p>
+    <h1 class="hero-title">
+      Tu reforma,<br />
+      <em>hecha bien.</em>
+    </h1>
+    <p class="hero-sub">
+      Más de una década reformando hogares y locales en Barcelona.
+      Instaladores autorizados de luz, agua y gas. Trabajo limpio, plazos cumplidos.
+    </p>
+    <div class="hero-actions">
+      <a href="#contacto" class="btn btn-primary">Pide presupuesto →</a>
+      <a href="#trabajos" class="btn btn-ghost">Ver trabajos</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     SERVICIOS
+     ══════════════════════════════════════════════════ -->
+<section id="servicios">
+  <div class="container">
+    <div class="section-header reveal">
+      <div>
+        <div class="tag">Lo que hacemos</div>
+        <h2 class="section-title">Servicios<br /><em>integrales</em></h2>
+      </div>
+      <p class="section-desc">Cubrimos todo el ciclo de la reforma, desde el proyecto hasta el último detalle.</p>
+    </div>
+
+    <!-- ══════════════════════════════════════════════
+         TARJETAS DE SERVICIOS
+         Para añadir un servicio: copia un bloque
+         <div class="service-card"> y edita el contenido.
+         ══════════════════════════════════════════════ -->
+    <div class="services-grid">
+
+      <div class="service-card reveal">
+        <span class="service-icon">🏗️</span>
+        <h3 class="service-name">Reformas Integrales</h3>
+        <p class="service-desc">Transformamos pisos, casas y locales de arriba a abajo. Gestión completa del proyecto sin complicaciones.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <span class="service-icon">🚿</span>
+        <h3 class="service-name">Baños y Cocinas</h3>
+        <p class="service-desc">Renovación completa con materiales de calidad. Diseño funcional y acabados que duran años.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <span class="service-icon">⚡</span>
+        <h3 class="service-name">Instalación Eléctrica</h3>
+        <p class="service-desc">Instaladores autorizados. Cuadros eléctricos, cableado, puntos de luz y electricidad para todo tipo de espacios.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <span class="service-icon">💧</span>
+        <h3 class="service-name">Fontanería</h3>
+        <p class="service-desc">Instalación y reparación de tuberías, sanitarios y sistemas de agua fría y caliente.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <span class="service-icon">🔥</span>
+        <h3 class="service-name">Gas</h3>
+        <p class="service-desc">Instaladores autorizados de gas. Calderas, cocinas, calefacción y revisiones reglamentarias.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <span class="service-icon">🪟</span>
+        <h3 class="service-name">Albañilería y Acabados</h3>
+        <p class="service-desc">Alicatados, pavimentos, tabiques, pintura y todo tipo de trabajos de construcción y acabado.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     CARRUSEL DE TRABAJOS REALIZADOS
+     ══════════════════════════════════════════════════ -->
+<section id="trabajos">
+  <div class="container">
+    <div class="section-header reveal">
+      <div>
+        <div class="tag">Portfolio</div>
+        <h2 class="section-title">Trabajos<br /><em>realizados</em></h2>
+      </div>
+      <p class="section-desc">Una muestra de algunos de nuestros proyectos en Barcelona.</p>
+    </div>
+  </div>
+
+  <!-- Carrusel — se extiende al ancho completo -->
+  <div class="container">
+    <div class="carousel-wrapper reveal">
+      <div class="carousel-track-outer">
+        <div class="carousel-track" id="carouselTrack">
+
+          <!-- ════════════════════════════════════════════════════════
+               CÓMO AÑADIR FOTOS AL CARRUSEL
+               ════════════════════════════════════════════════════════
+               1. Copia el bloque completo <div class="slide">...</div>
+               2. Cambia el src de <img> por la ruta de tu foto
+               3. Cambia el texto de <p class="slide-caption">
+               4. Guarda el archivo y súbelo al hosting
+
+               OPCIÓN A — Foto en el hosting (recomendado):
+                 src="fotos/trabajos/nombre-de-tu-foto.jpg"
+                 Nombra las fotos con palabras clave para SEO:
+                 reforma-bano-barcelona-01.jpg ✓
+                 foto1.jpg ✗
+
+               OPCIÓN B — Foto en URL externa (Google Drive, etc.):
+                 src="https://drive.google.com/uc?id=TU_ID_AQUI"
+                 Para obtener el enlace directo de Google Drive:
+                 · Comparte el archivo como "Cualquier usuario con el enlace"
+                 · Copia el ID del enlace (la parte entre /d/ y /view)
+                 · Usa el formato: https://drive.google.com/uc?id=ID
+
+               Para cambiar entre opciones, basta con editar el src.
+               ════════════════════════════════════════════════════════ -->
+
+          <!-- SLIDE 1 — Cambia src y caption -->
+          <div class="slide">
+            <!--
+            HOSTING PROPIO (activa esta línea, comenta la de abajo):
+            <img src="fotos/trabajos/reforma-bano-barcelona-01.jpg" alt="Reforma de baño en Barcelona" loading="lazy" />
+
+            URL EXTERNA (activa esta línea, comenta la de arriba):
+            <img src="https://drive.google.com/uc?id=TU_ID_AQUI" alt="Reforma de baño en Barcelona" loading="lazy" />
+            -->
+            <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80" alt="Reforma de baño completo en Barcelona" loading="lazy" />
+            <p class="slide-caption">Reforma de baño · Sant Andreu, Barcelona</p>
+          </div>
+
+          <!-- SLIDE 2 -->
+          <div class="slide">
+            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80" alt="Reforma de cocina moderna en Barcelona" loading="lazy" />
+            <p class="slide-caption">Reforma de cocina · Nou Barris, Barcelona</p>
+          </div>
+
+          <!-- SLIDE 3 -->
+          <div class="slide">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Instalación eléctrica en local Barcelona" loading="lazy" />
+            <p class="slide-caption">Instalación eléctrica · Local comercial, Barcelona</p>
+          </div>
+
+          <!-- SLIDE 4 -->
+          <div class="slide">
+            <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80" alt="Reforma integral de piso en Barcelona" loading="lazy" />
+            <p class="slide-caption">Reforma integral · Piso en el Eixample</p>
+          </div>
+
+          <!-- SLIDE 5 -->
+          <div class="slide">
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80" alt="Instalación de fontanería en Barcelona" loading="lazy" />
+            <p class="slide-caption">Fontanería · Edificio residencial, Barcelona</p>
+          </div>
+
+          <!-- SLIDE 6 -->
+          <div class="slide">
+            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80" alt="Acabados y pintura reforma Barcelona" loading="lazy" />
+            <p class="slide-caption">Acabados y pintura · Piso reformado, Barcelona</p>
+          </div>
+
+          <!--
+          ════════════════════════════════════════════════════════
+          AÑADE AQUÍ MÁS SLIDES — copia el bloque de arriba
+          ════════════════════════════════════════════════════════
+          -->
+
+        </div><!-- fin carousel-track -->
+      </div><!-- fin carousel-track-outer -->
+
+      <!-- Controles -->
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="prevBtn" aria-label="Anterior">&#8592;</button>
+        <div class="carousel-dots" id="carouselDots"></div>
+        <button class="carousel-btn" id="nextBtn" aria-label="Siguiente">&#8594;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     FORMULARIO DE CONTACTO Y PRESUPUESTO
+     ══════════════════════════════════════════════════ -->
+<section id="contacto">
+  <div class="container">
+    <div class="contact-layout">
+
+      <!-- Información de contacto -->
+      <div class="contact-info reveal">
+        <div class="tag">Hablemos</div>
+        <h2 class="section-title">Pide tu<br /><em>presupuesto</em></h2>
+        <div class="contact-divider"></div>
+
+        <div class="info-block">
+          <p class="info-label">Teléfono</p>
+          <p class="info-value"><a href="tel:+34933499362">+34 933 49 93 62</a></p>
+        </div>
+
+        <div class="info-block">
+          <p class="info-label">Email</p>
+          <p class="info-value"><a href="mailto:er.mi2010@hotmail.com">er.mi2010@hotmail.com</a></p>
+        </div>
+
+        <div class="info-block">
+          <p class="info-label">Dirección</p>
+          <p class="info-value">
+            Carrer del Cardenal Tedeschini, 19<br />
+            08027 Barcelona
+          </p>
+        </div>
+
+        <div class="info-block">
+          <p class="info-label">Horario de atención</p>
+          <dl class="horario-grid">
+            <dt>Lun – Vie</dt><dd>9:00–14:00 · 16:00–19:00</dd>
+            <dt>Sáb – Dom</dt><dd>Cerrado</dd>
+          </dl>
+        </div>
+      </div>
+
+      <!-- Formulario -->
+      <div class="contact-form reveal">
+        <div id="formContent">
+          <p class="form-title">Solicitud de presupuesto</p>
+          <!--
+          ════════════════════════════════════════════════════════
+          CÓMO CONECTAR EL FORMULARIO AL EMAIL
+          ════════════════════════════════════════════════════════
+          Ahora mismo el formulario muestra confirmación visual
+          pero NO envía email. Para que lleguen los mensajes:
+
+          OPCIÓN 1 — Formspree (gratis, 50 envíos/mes):
+            1. Regístrate en https://formspree.io
+            2. Crea un formulario nuevo
+            3. Cambia la línea <form id="contactForm"> por:
+               <form id="contactForm" action="https://formspree.io/f/TU_ID" method="POST">
+            4. Elimina el e.preventDefault() del JS de abajo
+               (línea marcada con [FORMSPREE])
+
+          OPCIÓN 2 — Si el hosting tiene PHP:
+            Cambia el action del form a: action="enviar.php"
+            y crea un archivo enviar.php con mail() de PHP.
+          ════════════════════════════════════════════════════════
+          -->
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nombre">Nombre *</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required />
+              </div>
+              <div class="form-group">
+                <label for="apellidos">Apellidos *</label>
+                <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="telefono">Teléfono *</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="6XX XXX XXX" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" placeholder="tu@email.com" required />
+              </div>
+            </div>
+
+            <div class="form-group full">
+              <label for="servicio">Tipo de trabajo</label>
+              <select id="servicio" name="servicio">
+                <option value="">— Selecciona un servicio —</option>
+                <option>Reforma integral</option>
+                <option>Baño / Cocina</option>
+                <option>Instalación eléctrica</option>
+                <option>Fontanería</option>
+                <option>Gas</option>
+                <option>Albañilería y acabados</option>
+                <option>Otro</option>
+              </select>
+            </div>
+
+            <div class="form-group full">
+              <label for="mensaje">Cuéntanos tu proyecto *</label>
+              <textarea id="mensaje" name="mensaje" rows="4"
+                placeholder="Describe qué quieres reformar, superficie aproximada, plazo deseado..." required></textarea>
+            </div>
+
+            <div class="form-check">
+              <input type="checkbox" id="privacidad" name="privacidad" required />
+              <label for="privacidad" style="text-transform:none;font-size:13px;letter-spacing:0;font-weight:400;">
+                Acepto la <a href="#">política de privacidad</a> y el tratamiento de mis datos para responder a mi solicitud.
+              </label>
+            </div>
+
+            <button type="submit" class="btn-submit">Enviar solicitud →</button>
+          </form>
+        </div>
+
+        <!-- Pantalla de confirmación -->
+        <div class="form-success" id="formSuccess">
+          <div class="form-success-icon">✅</div>
+          <h3>¡Mensaje recibido!</h3>
+          <p>Nos ponemos en contacto contigo en menos de 24 horas.<br />Gracias por confiar en ERMI.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     MAPA DE GOOGLE
+     ══════════════════════════════════════════════════ -->
+<div id="mapa">
+  <iframe
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    src="https://maps.google.com/maps?width=100%25&height=340&hl=es&q=Carrer+del+Cardenal+Tedeschini,+19,+08027+Barcelona&t=&z=16&ie=UTF8&iwloc=B&output=embed"
+    title="Ubicación Reformes Integrals ERMI · Carrer del Cardenal Tedeschini 19, Barcelona">
+  </iframe>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     FOOTER
+     ══════════════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <p class="footer-logo">ERMI<span>·</span></p>
+        <p class="footer-tagline">Reformes Integrals · Barcelona</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#trabajos">Trabajos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#">Política de privacidad</a></li>
+      </ul>
+    </div>
+    <p class="footer-copy">
+      © 2026 Reformes Integrals ERMI · Carrer del Cardenal Tedeschini 19, 08027 Barcelona ·
+      <a href="tel:+34933499362" style="color:inherit;">+34 933 49 93 62</a>
+    </p>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════════════
+     JAVASCRIPT
+     ══════════════════════════════════════════════════ -->
+<script>
+  /* ── Menú burger (móvil) ── */
+  const burger   = document.getElementById('burger');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => navLinks.classList.remove('open'))
+  );
+
+  /* ── Reveal al hacer scroll ── */
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 75);
+        revealObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+  /* ── Carrusel ──────────────────────────────────────────────
+     El carrusel calcula automáticamente cuántas slides
+     caben en pantalla y avanza de una en una.
+     No hace falta tocar este código al añadir más slides.
+  ── ─────────────────────────────────────────────────────── */
+  (function () {
+    const track   = document.getElementById('carouselTrack');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const dotsEl  = document.getElementById('carouselDots');
+
+    const slides  = Array.from(track.querySelectorAll('.slide'));
+    let current   = 0;
+
+    function visibleCount() {
+      const w = window.innerWidth;
+      if (w < 600) return 1;
+      if (w < 900) return 2;
+      return 3;
+    }
+
+    function maxIndex() {
+      return Math.max(0, slides.length - visibleCount());
+    }
+
+    function buildDots() {
+      dotsEl.innerHTML = '';
+      const total = maxIndex() + 1;
+      for (let i = 0; i < total; i++) {
+        const btn = document.createElement('button');
+        btn.className = 'carousel-dot' + (i === current ? ' active' : '');
+        btn.setAttribute('aria-label', `Ir a la foto ${i + 1}`);
+        btn.addEventListener('click', () => goTo(i));
+        dotsEl.appendChild(btn);
+      }
+    }
+
+    function goTo(idx) {
+      current = Math.max(0, Math.min(idx, maxIndex()));
+      const slideWidth = slides[0].getBoundingClientRect().width + 16; // gap = 16px
+      track.style.transform = `translateX(-${current * slideWidth}px)`;
+      prevBtn.disabled = current === 0;
+      nextBtn.disabled = current >= maxIndex();
+      dotsEl.querySelectorAll('.carousel-dot').forEach((d, i) =>
+        d.classList.toggle('active', i === current)
+      );
+    }
+
+    prevBtn.addEventListener('click', () => goTo(current - 1));
+    nextBtn.addEventListener('click', () => goTo(current + 1));
+
+    // Swipe táctil
+    let touchStartX = 0;
+    track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) goTo(current + (diff > 0 ? 1 : -1));
+    });
+
+    // Recalcular al redimensionar
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => { buildDots(); goTo(current); }, 150);
+    });
+
+    buildDots();
+    goTo(0);
+  })();
+
+  /* ── Formulario ─────────────────────────────────────────────
+     [FORMSPREE] Si usas Formspree, elimina el e.preventDefault()
+     de la línea marcada abajo y añade el action al <form>.
+  ── ─────────────────────────────────────────────────────── */
+  const form        = document.getElementById('contactForm');
+  const formContent = document.getElementById('formContent');
+  const formSuccess = document.getElementById('formSuccess');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault(); // [FORMSPREE] elimina esta línea si usas Formspree
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    setTimeout(() => {
+      formContent.style.display = 'none';
+      formSuccess.style.display = 'block';
+    }, 350);
+  });
+</script>
+
+</body>
+</html>
